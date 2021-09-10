@@ -1,4 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shop.cofin.oracle.mappers.OrderMapper">
+
+	<select id="findAll" resultType="shop.cofin.oracle.order.domain.OrderDto">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+	</select>
+	<select id="findByOrderId" resultType="shop.cofin.oracle.order.domain.OrderDto"
+	parameterType="int">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+		Where order_id like ${orderId}
+	</select>
+	<select id="findByCustId" resultType="shop.cofin.oracle.order.domain.OrderDto"
+	parameterType="int">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+		Where cust_id like ${custId}
+	</select>
+	<select id="findByBookId" resultType="shop.cofin.oracle.order.domain.OrderDto"
+	parameterType="int">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+		Where book_id like ${bookId}
+	</select>
+	<select id="findByPrice" resultType="shop.cofin.oracle.order.domain.OrderDto"
+	parameterType="int">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+		Where price >= ${price}
+	</select>
+	<select id="findByDate" resultType="shop.cofin.oracle.order.domain.OrderDto"
+	parameterType="int">
+		select
+			order_id orderId,
+			cust_id custId,
+			book_id BookId,
+			price,
+			date
+		from orders	
+		Where date >= ${date}
+	</select>
 </mapper>

@@ -1,13 +1,13 @@
-package shop.cofin.oracle.mappers;
+package shop.cofin.oracle.publishers.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import shop.cofin.oracle.publishers.domain.PublisherDto;
 
-@Repository
-public interface PublisherMapper {
+@Component
+public interface PublisherService {
 	public List<PublisherDto> findAll();
 	public PublisherDto findByPubId(int pubId);
 	public List<PublisherDto> findByPubName(String pubName);

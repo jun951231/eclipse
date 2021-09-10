@@ -28,8 +28,8 @@ public class BookController {
 	}
 	@RequestMapping("/books/bookId/{bookId}")
 	public void findById(@PathVariable int bookId) {
-		BookDto book = bookService.findById(bookId);
-		System.out.println(book.toString());
+		BookDto books = bookService.findById(bookId);
+		System.out.println(books.toString());
 	}
 	
 	
