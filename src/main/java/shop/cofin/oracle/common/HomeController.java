@@ -1,4 +1,4 @@
-package shop.cofin.oracle;
+package shop.cofin.oracle.common;
 
 
 
@@ -33,14 +33,14 @@ public class HomeController {
 	public String join() {
 		
 		
-		return "order/Join";
+		return "user/Register";
 	}
 	
 	@RequestMapping(value = "/loginform", method = RequestMethod.GET)
 	public String login() {
 		
 		
-		return "order/Login";
+		return "user/Login";
 	}
 	
 	

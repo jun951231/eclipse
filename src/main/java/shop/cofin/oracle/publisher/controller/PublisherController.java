@@ -1,43 +1,49 @@
 package shop.cofin.oracle.publisher.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import shop.cofin.oracle.common.GenericInterface;
 import shop.cofin.oracle.publisher.domain.PublisherDto;
 import shop.cofin.oracle.publisher.service.PublisherService;
 
 @Controller
-@RequestMapping("/publishers")
-public class PublisherController {
+
+public class PublisherController{
 	@Autowired PublisherService publisherService;
-	@Autowired PublisherDto publisher;
-	
-	@RequestMapping(value="/join", method= {RequestMethod.POST})
-	public String join(
-			@RequestParam("pubId") int pubId,
-			@RequestParam("pubName") String pubName,
-			@RequestParam("marName") String marName,
-			@RequestParam("phone") String phone) {
-		System.out.println("pubId :" +pubId);
-		System.out.println("pubName :" +pubName);
-		System.out.println("marName :" +marName);
-		System.out.println("phone :" +phone);
-		publisher = new PublisherDto();
-		publisher.setPubId(pubId);
-		publisher.setPubName(pubName);
-		publisher.setMarName(marName);
-		publisher.setPhone(phone);
-		publisherService.save(publisher);
-		return "/publisher/Login";
+
+	@RequestMapping("/save")
+	public void save(PublisherDto t) {
+		publisherService.save(t);
+		
 	}
-	@RequestMapping(value="/login", method= {RequestMethod.POST})
-	public String login() {
-		return "Login";
+
+	@RequestMapping("/find/{id}")
+	public PublisherDto findById(Integer id) {
+		return publisherService.findById(id);
 	}
-			
+
+	@RequestMapping("/list")
+	public List<PublisherDto> findAll() {
+		return publisherService.findAll();
+	}
+
+	@RequestMapping(value="/update", method = RequestMethod.PUT)
+	public void update(PublisherDto t) {
+		publisherService.update(t);
+		
+	}
+
+	@RequestMapping(value="/delet/{id}", method = RequestMethod.DELETE)
+	public void delete(Integer id) {
+		publisherService.delete(id);
+		
+	}
+		
 }			
 			
 	

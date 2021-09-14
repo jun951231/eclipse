@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shop.cofin.oracle.mappers.PublisherMapper">
-	<insert id="save" parameterType="shop.cofin.oracle.publisher.domain.PublisherDto">
-		insert into
-		publishers (pub_id, pub_name, book_id, mar_name, phone)
-		values (${pubId}, #{pubName}, #{marName}, #{phone})
+	<insert id="save" parameterType="string">
+		insert into publishers(
+			pub_id,
+			pub_name,
+			mar_name,
+			phone
+		)values(
+			${pubId},
+			#{pubName},
+			#{marName},
+			#{phone}
+		)
 	</insert>
+	
+	<select id="findAll" resultType="string">
+		select
+			pub_id,
+			pub_name,
+			mar_name,
+			phone
+		from publishers
+	</select>
+	<select id="findById" resultType="string">
+		select
+			pub_id,
+			pub_name,
+			mar_name,
+			phone
+		from publishers
+		where pub_id like ${pubId}
+	</select>
+	<select id="findByPubName" resultType="string">
+		select
+			pub_id,
+			pub_name,
+			mar_name,
+			phone
+		from publishers
+		where pub_id like ${pubName}
+	</select>
+	<select id="findByMarName" resultType="string">
+		select
+			pub_id,
+			pub_name,
+			mar_name,
+			phone
+		from publishers
+		where pub_id like ${marName}
+	</select>
+	<update id="update" parameterType="string">
+		update publishers set
+			pub_name = #{pubName},
+			mar_name = #{marName},
+			phone = #{phone}
+		where pub_id like ${pubId}
+	</update>
+	<delete id="delete" parameterType="string">
+		delete from publishers
+		where pub_id like ${value}
+	</delete>
+	
 </mapper>

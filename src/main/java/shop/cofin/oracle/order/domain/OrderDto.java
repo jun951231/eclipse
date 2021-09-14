@@ -9,9 +9,10 @@ public class OrderDto {
 	private int orderId;
 	private int custId;
 	private int bookId;
-	private int orderPrice;
-	private String orderDate;
+	private int price;
+	private String date;
 	
+		
 	public int getOrderId() {
 		return orderId;
 	}
@@ -30,23 +31,22 @@ public class OrderDto {
 	public void setBookId(int bookId) {
 		this.bookId = bookId;
 	}
-	public int getorderPrice() {
-		return orderPrice;
+	public int getPrice() {
+		return price;
 	}
-	public void setorderPrice(int orderPrice) {
-		this.orderPrice = orderPrice;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-	public String getorderDate() {
-		return orderDate;
+	public String getDate() {
+		return date;
 	}
-	public void setorderDate(String orderDate) {
-		this.orderDate = orderDate;
+	public void setDate(String date) {
+		this.date = date;
 	}
-	
 	@Override
 	public String toString() {
 		
-		return String.format("주문ID: %d, 고객ID: %d, 책ID: %d, 책가격: %d 도착일: %s", orderId, custId, bookId, orderPrice, orderDate);
+		return String.format("주문ID: %d, 고객ID: %d, 책ID: %d, 책가격: %d 도착일: %s", orderId, custId, bookId, price, date);
 	}
 	
 }

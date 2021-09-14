@@ -6,15 +6,15 @@ import lombok.Data;
 
 @Component	@Data
 public class CustomerDto {
-	private String custId;
+	private int custId;
 	private String custName;
 	private String address;
 	private String phone;
 	
-	public String getCustId() {
+	public int getCustId() {
 		return custId;
 	}
-	public void setCustId(String custId) {
+	public void setCustId(int custId) {
 		this.custId = custId;
 	}
 	public String getCustName() {
