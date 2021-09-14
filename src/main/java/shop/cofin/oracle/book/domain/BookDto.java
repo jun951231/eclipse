@@ -28,19 +28,19 @@ public class BookDto {
 		this.bookTitle = bookTitle;
 	}
 	
-	public int getBookPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setBookPrice(int price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	
-	public int getBookPubId() {
+	public int getPubId() {
 		return pubId;
 	}
 
-	public void setBookPubId(int pubId) {
+	public void setPubId(int pubId) {
 		this.pubId = pubId;
 	}
 	

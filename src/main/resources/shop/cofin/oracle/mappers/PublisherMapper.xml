@@ -1,53 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="shop.cofin.oracle.mappers.PublishersMapper">
-	<select id="findAll" resultType="shop.cofin.oracle.publishers.domain.PublisherDto">
-		select
-			pub_id pubId,
-			pub_name pubName,
-			mar_name marName,
-			phone
-		from publishers
-	</select>
-	
-	<select id="findByPubId" resultType="shop.cofin.oracle.publishers.domain.PublisherDto"
-	parameterType="int">
-	select
-			pub_id pubId,
-			pub_name pubName,
-			mar_name marName,
-			phone
-		from publishers
-		where pub_id like ${pubId}
-	</select>
-	<select id="findByPubName" resultType="shop.cofin.oracle.publishers.domain.PublisherDto"
-	parameterType="String">	
-		select
-			pub_id pubId,
-			pub_name pubName,
-			mar_name marName,
-			phone
-		from publishers
-		where pub_name like '%' || #{value} || '%'
-	</select>
-	<select id="findByMarName" resultType="shop.cofin.oracle.publishers.domain.PublisherDto"
-	parameterType="String">
-	select
-			pub_id pubId,
-			pub_name pubName,
-			mar_name marName,
-			phone
-		from publishers
-		where mar_name like ${pubId}
-	</select>
-	<select id="findByPhone" resultType="shop.cofin.oracle.publishers.domain.PublisherDto"
-	parameterType="int">
-	select
-			pub_id pubId,
-			pub_name pubName,
-			mar_name marName,
-			phone
-		from publishers
-		where phone like '%' || #{value} || '%'
-	</select>
+<mapper namespace="shop.cofin.oracle.mappers.PublisherMapper">
+	<insert id="save" parameterType="shop.cofin.oracle.publisher.domain.PublisherDto">
+		insert into
+		publishers (pub_id, pub_name, book_id, mar_name, phone)
+		values (${pubId}, #{pubName}, #{marName}, #{phone})
+	</insert>
 </mapper>

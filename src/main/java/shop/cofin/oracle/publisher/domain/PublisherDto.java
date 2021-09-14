@@ -1,4 +1,4 @@
-package shop.cofin.oracle.publishers.domain;
+package shop.cofin.oracle.publisher.domain;
 
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ public class PublisherDto {
 	private int pubId;
 	private String pubName;
 	private String marName;
-	private int phone;
+	private String phone;
 	
 	public int getPubId() {
 		return pubId;
@@ -29,10 +29,10 @@ public class PublisherDto {
 	public void setMarName(String marName) {
 		this.marName = marName;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
