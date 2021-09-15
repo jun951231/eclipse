@@ -8,13 +8,13 @@
 
 <h2>로그인 폼</h2>
 
-<form action="/action_page.php" method="post">
+<form action="/users/login" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
+    <label for="uname"><b>UserName</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>

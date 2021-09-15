@@ -8,9 +8,12 @@
 
 <h2>고객 상세</h2>
 
-<form action="${contextPath}/customers/join" method="post">
+<form action="${contextPath}/customers/register" method="post">
 
   <div class="container">
+   <label for="custId"><b>custId</b></label>
+    <input type="text" placeholder="Enter ID" name="custId" required>
+  
     <label for="custName"><b>custName</b></label>
     <input type="text" placeholder="Enter Username" name="custName" required>
 

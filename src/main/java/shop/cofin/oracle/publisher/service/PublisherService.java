@@ -9,14 +9,9 @@ import shop.cofin.oracle.publisher.domain.PublisherDto;
 
 @Component
 public interface PublisherService extends GenericInterface<PublisherDto, Integer>{
-	public List<PublisherDto> findAll();
-	public PublisherDto findById(int pubId);
-	void save(PublisherDto publisherDto);
-	void update(PublisherDto publisherDto);
-	void delete(int pubId);
-	
-	public PublisherDto findByPubName(String name);
-	public PublisherDto findByMarName(String name);
-	public PublisherDto findByPhone(String phone);
+		
+	public List<PublisherDto> findByPubName(String pubName);
+	public List<PublisherDto> findByMarName(String marName);
+	public List<PublisherDto> findByPhone(String phone);
 
 }

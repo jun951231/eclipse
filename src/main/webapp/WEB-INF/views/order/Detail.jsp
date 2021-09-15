@@ -6,7 +6,7 @@
 <jsp:include page="../common/head.jsp"/>
 <h2>주문 상세</h2>
 
-<form action="<%=application.getContextPath()%>/orders" method="post">
+<form action="${ContextPath}/customers/join" method="post">
 
   <div class="container">
     <label for="orderId"><b>orderId</b></label>

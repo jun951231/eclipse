@@ -8,7 +8,7 @@
 
 <h2>책 상세</h2>
 
-<form action="<%=application.getContextPath()%>/books" method="post">
+<form action="${ContextPath}/customers/join" method="post">
 
   <div class="container">
     <label for="bookId"><b>bookId</b></label>

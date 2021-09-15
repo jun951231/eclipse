@@ -7,7 +7,7 @@
 <body>
 <h2>주문 등록</h2>
 
-<form action="${contextPath}/orders" method="post">
+<form action="${contextPath}/orders/register" method="post">
 
   <div class="container">
     <label for="orderId"><b>orderId</b></label>

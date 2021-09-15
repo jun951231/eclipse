@@ -6,7 +6,7 @@
 <jsp:include page="../common/head.jsp"/>
 <h2>출판사 상세</h2>
 
-<form action="<%=application.getContextPath()%>/publishers" method="post">
+<form action="${ContextPath}/customers/join" method="post">
 
   <div class="container">
     <label for="pubId"><b>custName</b></label>

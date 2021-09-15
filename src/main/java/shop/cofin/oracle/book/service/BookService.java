@@ -9,13 +9,8 @@ import shop.cofin.oracle.common.GenericInterface;
 
 @Component
 public interface BookService extends GenericInterface<BookDto, Integer>{
-	public List<BookDto> findAll();
-	public BookDto findById(int bookId);
-	void save(BookDto book);
-	void update(BookDto book);
-	void dele(int bookId);
-		
-	public BookDto findByBookTitle(String title);
-	public BookDto findByPrice(String price);
-	public BookDto findByPubId (String id);
+
+	public List<BookDto> findByBookTitle(String title);
+	public List<BookDto> findByPrice(int price);
+	public List<BookDto> findByPubId (int pubId);
 }

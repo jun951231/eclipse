@@ -45,7 +45,7 @@
 		from orders
 		where cust_id like ${custId}
 	</select>
-	<select id="findByBookId" resultType="order">
+	<select id="findByBooktId" resultType="order">
 		select
 			order_id, 
 			cust_id, 

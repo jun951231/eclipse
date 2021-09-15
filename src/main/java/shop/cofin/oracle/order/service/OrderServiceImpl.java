@@ -13,8 +13,8 @@ public class OrderServiceImpl implements OrderService{
 	@Autowired OrderMapper mapper;
 
 	@Override
-	public void save(OrderDto t) {
-		mapper.save(t);		
+	public void save(OrderDto order) {
+		mapper.save(order);		
 	}
 
 	@Override
@@ -29,17 +29,39 @@ public class OrderServiceImpl implements OrderService{
 
 	@Override
 	public void update(OrderDto t) {
-		mapper.update(t);		
+		mapper.update(t);
+		
 	}
 
 	@Override
 	public void delete(Integer id) {
 		mapper.delete(id);
+		
 	}
 
-	
+	@Override
+	public List<OrderDto> findByCustId(int custId) {
+		return mapper.findByCustId(custId);
+	}
 
-	
+	@Override
+	public List<OrderDto> findByBooktId(int bookId) {
+		// TODO Auto-generated method stub
+		return mapper.findByBooktId(bookId);
+	}
+
+	@Override
+	public List<OrderDto> findByPrice(int price) {
+		// TODO Auto-generated method stub
+		return mapper.findByPrice(price);
+	}
+
+	@Override
+	public List<OrderDto> findByDate(String date) {
+		// TODO Auto-generated method stub
+		return mapper.findByDate(date);
+	}
+
 	
 
 }
