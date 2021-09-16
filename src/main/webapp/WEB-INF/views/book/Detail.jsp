@@ -8,7 +8,7 @@
 
 <h2>책 상세</h2>
 
-<form action="${ContextPath}/customers/join" method="post">
+<form action="${ContextPath}/customers/join" method="get">
 
   <div class="container">
     <label for="bookId"><b>bookId</b></label>
@@ -23,13 +23,8 @@
     <label for="pubId"><b>"pubId"</b></label>
     <input type="text" placeholder="Enter Id" name="pubId" required>
         
-    <button type="submit">Login</button>
+    <button type="submit">책 상세</button>
     
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
 

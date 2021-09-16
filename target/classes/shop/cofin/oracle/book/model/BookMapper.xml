@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop.cofin.oracle.book.model.BookMapper">
+	<insert id= "save" parameterType="string">
+		insert into books(
+			book_id,
+			book_title,
+			price,
+			pub_id
+		)values(
+			${bookId},
+			#{bookTitle},
+			${price},
+			${pubId}
+		)
+	</insert>
+	
+	<select id="findAll" resultType="book">
+		select 
+			book_id bookId,
+			book_title bookTitle,
+			price,
+			pub_id pubId
+		 from books
+	</select>
+	
+	<select id="findById" resultType="book"
+	parameterType="int">
+		select 
+			book_id bookId,
+			book_title bookTitle,
+			price,
+			pub_id pubId
+		 from books
+         where book_id like ${bookId}       
+	</select>
+	
+	<update id= "update" parameterType="string">
+		update books set
+			book_title = #{bookTitle},
+			price = ${price}
+			pub_id= ${pubId}
+		where book_id like ${bookId}
+	</update>
+			
+	<delete id= "delete" parameterType="string">
+		delete from books
+		where book_id like ${value}
+	</delete>	
+	
+	<select id="findByPubId" resultType="book"
+	parameterType="int">
+		select 
+			book_id bookId,
+			book_title bookTitle,
+			price,
+			pub_id pubId
+		 from books
+         where pub_id like ${pubId}  
+	</select>
+	
+	<select id="findByBookTitle" resultType="book" 
+	parameterType="string">
+		select 
+			book_id bookId,
+			book_title bookTitle,
+			price,
+			pub_id pubId
+		 from books
+         where book_title '%'|| #{value} || '%' </select>
+    <select id="findByPrice" resultType="book" 
+	parameterType="int">
+	
+		select 
+			book_id bookId,
+			book_title bookTitle,
+			price,
+			pub_id pubId
+		 from books
+         where price >= ${price}      
+       
+	</select>
+</mapper>
